@@ -19,7 +19,37 @@ Create a small workflow management tool following the core principles of Kanban.
 
 # Start #
 
-What can I break Kanban down to be in its simplest form? 4 lists of data is probably the simplest way I can break it down. Here's a bit of pseudo to get the oils going.
+The completed app should allow or the following:
+
+* The user will be able to input a task which isn't shown by default but automatically moves over to the 'To Do' column once bandwiwdth becomes available.
+* When the task reaches the 'Completed', it drops off into a completed section which isn't shown by default but can be viewed.
+* The user can delete tasks
+* the user can edit tasks
+* the user can push a task forward
+* the user can push a task backward
+* the tasks should have a log of what happened to it
+
+So I have typed up the preqrequisites that the Kanban app should allow me to do. I will now re read them, and see if there is anything I would change before commencing the drawings.
+
+# Amendments #
+* I will have the tasks automatically populate a To Do list and show it. The nature of seeing whats in the To Do will act as a visual stimulant to encourage progress.
+
+
+
+
+# The Task Class #
+What information will a task need to hold?
+
+* Date
+* Title
+* Description
+* Author
+* Category
+* Update Log
+
+
+
+
 
 ```
 
