@@ -32,13 +32,16 @@ The completed app should allow or the following:
 So I have typed up the preqrequisites that the Kanban app should allow me to do. I will now re read them, and see if there is anything I would change before commencing the drawings.
 
 # Amendments #
+I will pop any additional feature ideas here that I feel may serve m in the future.
 * I will have the tasks automatically populate a To Do list and show it. The nature of seeing whats in the To Do will act as a visual stimulant to encourage progress.
+* Difficulty gauge. Althoguh this is qualitative, I will be the only user so there will be no risk of miscommunication or misinterpretation
+* Reference Source - I can past in a link or directions to a page in a book as a seperate list
 
 
 
 
 # The Task Class #
-What information will a task need to hold?
+What information will a task need to hold? wbn = would be nice, but not necessary
 
 * Date
 * Title
@@ -46,6 +49,8 @@ What information will a task need to hold?
 * Author
 * Category
 * Update Log
+*  *difficulty gauge - wbn*
+*  *reference source - wbn*
 
 
 
