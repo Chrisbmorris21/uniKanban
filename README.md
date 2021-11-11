@@ -70,4 +70,12 @@ And that is the general premise behind Kanban.
 ![Barebones image depicting 4 columns each with its own label](https://github.com/Chrisbmorris21/uniKanban/blob/main/images/designs/1.jpg)
 
 It's not Disneyland (guess the movie) but the colors give me a rough idea of what I'm shooting for. Everything is easily seperated. I have split the CSS into a few files,
-one for the Cards, one will be for the Board, and another for the CRUD buttons.
+one for the Cards, one will be for the Board, and another for the CRUD buttons. Anyway, this is the evolution of the design. Once I'm happy with how it looks in CSS, I will split up the elements, get them into JS and go from there.
+
+![Barebones image depicting 4 columns each with its own label](https://github.com/Chrisbmorris21/uniKanban/blob/main/images/designs/2.jpg)
+
+![Barebones image depicting 4 columns each with its own label](https://github.com/Chrisbmorris21/uniKanban/blob/main/images/designs/3.jpg)
+
+
+
+
