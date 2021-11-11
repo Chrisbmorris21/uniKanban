@@ -58,3 +58,11 @@ list0:[task 0, task 1], list1:[task 2, task 3], list2:[task 4, task 5], list3:[t
 ```
 And that is the general premise behind Kanban.
 
+
+
+## General Barebones ##
+
+![Barebones image depicting 4 columns each with its own label](https://github.com/Chrisbmorris21/uniKanban/blob/main/images/designs/1.jpg)
+
+It's not Disneyland (guess the movie) but the colors give me a rough idea of what I'm shooting for. Everything is easily seperated. I have split the CSS into a few files,
+one for the Cards, one will be for the Board, and another for the CRUD buttons.
