@@ -78,4 +78,23 @@ one for the Cards, one will be for the Board, and another for the CRUD buttons. 
 
 
 
+## The Data ##
+
+So today has been sent going through the way I will be storing the data. Now because I have challenged myself to not use PHP, and no frameworks downloaded, I am going to use the HTML Local Storage. Now the thing with local storage as we know is that it can oly store key:value pairs, so I will need a good way to handle the data given the limitation.
+
+The way I haev opted to is to store the data in a JSON array, STRINGIFY the data, and then use the stringified array as the input for the k:v p.
+
+	```
+  [{Card #
+		Title: ,
+		Description: ,
+	}
+	{Card #
+		Title:,
+		Description: }]
+	etc.
+```
+The minimum data I need to test the cards will be the Title, and description. In fact, Title is all I really need, but the code is so similar passing 2 pieces of data as it is passing 10, whereas the difference between passing 1 piece and 2 is more notably different. So yeah, we will go for 2 data types.
+
+
 
