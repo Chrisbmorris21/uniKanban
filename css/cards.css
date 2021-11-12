@@ -1,0 +1,114 @@
+.cardShadow {
+    -webkit-box-shadow: 0px 6px 15px 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 6px 15px 1px rgba(0,0,0,0.2);
+}
+
+.expandedCard {
+    margin:5%;
+    width:90%;
+    height:270px;
+    background-color:#f1f1f1;
+    overflow:hidden;
+    border-radius:10px;
+    overflow:hidden;
+    position: relative;
+
+}
+
+
+.warning {
+    background-color:#a41e1e !important;
+    border-color:#a41e1e !important;
+    color:#fff;
+}
+
+.blueGUI {
+    color: #fff !important;
+    background-color:#53a4d7 !important;
+    border-color:#53a4d7 !important;
+}
+
+.orangeGUI {
+    color: #fff !important;
+    background-color:#DB773AFF !important;
+    border-color:#DB773AFF !important;
+}
+.orangeGUI:hover {
+    color: #fff !important;
+    background-color: #b9571e !important;
+    border-color:#b9571e !important;
+}
+
+.greenGUI {
+    color: #fff !important;
+    background-color:#57A41EFF !important;
+    border-color:#57A41EFF !important;
+}
+.greenGUI:hover {
+    color: #fff !important;
+    background-color: #3f8310 !important;
+    border-color:#3f8310 !important;
+}
+
+.redGUI {
+    color: #fff !important;
+    background-color:#A41E1EFF !important;
+    border-color:#A41E1EFF !important;
+}
+
+.redGUI:hover {
+    color: #fff !important;
+    background-color: #8f0d0d !important;
+    border-color:#8f0d0d !important;
+}
+
+.bottomButton {
+    position: absolute;
+    bottom: 0;
+    right:0;
+    margin-bottom:10px;
+    margin-right:10px;
+    z-index: 1;
+}
+
+.card {
+    width:100%;
+    height:auto;
+    background-color:#ad1f41;
+}
+
+.redCard {
+    color:#fff;
+    background-color:#a41e1e;
+
+}
+
+.greenCard {
+    color:#fff;
+    background-color: #57a41e;
+
+}
+
+.blueCard {
+    color:#fff;
+    background-color:#53a4d7;
+    border-radius:2px;
+
+}
+.orangeCard {
+    color:#fff;
+    background-color: #db773a;
+
+}
+.card_title {
+    padding-top:8px;
+    padding-bottom:8px;
+    text-align:center;
+    font-weight: bold;
+}
+.card_description {
+    padding-top:8px;
+    padding-bottom:8px;
+    margin:8px;
+    text-align:justify;
+}
