@@ -1,13 +1,17 @@
-function drawElement(tagName, containerName, tagClasses, type) {
+
+
+function drawElement(cardId, tagName, containerName, tagClasses) {
     //declaration of variables
+    let id = cardId;
     let tag = tagName;
     let container = containerName;
     let tagClass = tagClasses;
-    let elementType = type;
-
+    let parsedClass = "";
     //loop through class array
         tagClass.forEach(function(classItem) {
             console.log("logging item from class array - " + classItem);
+            parsedClass += classItem + " ";
+            console.log(parsedClass);
         });
 
     //Generate element and assign to parent
@@ -15,15 +19,19 @@ function drawElement(tagName, containerName, tagClasses, type) {
             let newDiv = document.createElement(tag);
         console.log("New " + tag + " successfully created");
 
+
+
+
         //assign ID to element
         console.log("Generating new " + tag + " ID");
-            newDiv.id="newCard1";
+            newDiv.id=id;
         console.log("New " + tag + " ID successfully generated");
 
     //assign classes to element
         console.log("Getting documentID for container");
             let targetDiv = document.getElementById(container);
-                targetDiv.appendChild(newDiv).className = "expandedCard cardShadow";
+                targetDiv.appendChild(newDiv).className = parsedClass;
+
 
     //debug console logs
     console.log("New " + tag + " successfully placed inside of " + container);
@@ -35,6 +43,7 @@ window.localStorage.clear();
 
 
 function writeStorage(storage) {
+
     console.log("Writing Local Storage...");
         //localStorage.setItem(val);
         //localStorage.getItem(val);
@@ -43,48 +52,82 @@ function writeStorage(storage) {
 
     //parsed input
 
-    let arrayData0 = [
-        {"column":0, "question":1, "description":"This card has a single description. Pretty nifty, huh?"},
-        {"column":0, "question":2, "description":"This card has a single description. Pretty nifty, huh?"}]
+    let arrayData = [
+        {"id":1,"column":0, "question":1, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":2,"column":0, "question":2, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":3,"column":1, "question":3, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":4,"column":3, "question":2, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":5,"column":0, "question":3, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":6,"column":3, "question":2, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":7,"column":1, "question":3, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":8,"column":0, "question":2, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":9,"column":0, "question":3, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":10,"column":2, "question":2, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":11,"column":1, "question":3, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":12,"column":3, "question":2, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":13,"column":1, "question":3, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":14,"column":2, "question":2, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":15,"column":1, "question":3, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":16,"column":1, "question":4, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":17,"column":2, "question":5, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":18,"column":2, "question":6, "description":"This card has a single description. Pretty nifty, huh?"},
+        {"id":19,"column":0, "question":7, "description":"This card has a single description. Pretty nifty, huh?"},]
 
-    const treatedInput = JSON.stringify(arrayData0);
+    const treatedInput = JSON.stringify(arrayData);
     storage.setItem("0", treatedInput);
 
     let parsedInput = JSON.parse(treatedInput);
     console.log("Here is the parsed input");
-    console.log(parsedInput);
+        console.log(parsedInput);
 
     for (const key in parsedInput) {
-        console.log(`${key}: ${parsedInput[key].column} ${parsedInput[key].question} ${parsedInput[key].description} `);
+
+        //Card Generating Function
+        function generateCard(x) {
+            let color = x;
+                let classVar = ["expandedCard","cardShadow"];
+
+            console.log(`${key}: ${parsedInput[key].column} ${parsedInput[key].question} ${parsedInput[key].description} `);
+            drawElement("card"+parsedInput[key].id,"div", "column"+parsedInput[key].column, classVar);
+
+                //Card Color Title
+                let classVar2 = ["card", color+"Card"];
+                drawElement("titleCard"+parsedInput[key].id,"div", "card" + parsedInput[key].id, classVar2);
+
+                    //Paragraph Title
+                    let classVar3 = ["card_title"];
+                    drawElement("cardTitleP"+parsedInput[key].id,"p", "titleCard" + parsedInput[key].id, classVar3);
+                    const node = document.createTextNode("Item ");
+                    document.getElementById("cardTitleP"+parsedInput[key].id).appendChild(node);
 
 
+                //Paragraph Description
+                let classVar4 = ["card_description"];
+                drawElement("cardDescP"+parsedInput[key].id,"p", "card"+parsedInput[key].id, classVar4);
+                const node2 = document.createTextNode(parsedInput[key].description);
+                document.getElementById("cardDescP"+parsedInput[key].id).appendChild(node2);
 
+        }
 
+        //Generate Blue Cards in Column 0
+        if (parsedInput[key].column == 0) {
+            generateCard("blue");
+        }
+
+        //Generate Orange Cards in Column 1
+        if (parsedInput[key].column == 1) {
+            generateCard("orange");
+        }
+        //Generate Red Cards in Column 2
+        if (parsedInput[key].column == 2) {
+            generateCard("red");
+        }
+
+        //Generate Green Cards in Column 3
+        if (parsedInput[key].column == 3) {
+            generateCard("green");
+        }
     }
-
-    //parsed input
-
-
-
-
-
-    let arrayData1 = [
-        {"Question":3, "Column":1, "description":"This card has a single description. Pretty nifty, huh?"},
-        {"Question":4, "Column":0, "description":"This card has a single description. Pretty nifty, huh?"}]
-    const treatedInput1 = JSON.stringify(arrayData1);
-    storage.setItem("1", treatedInput1);
-
-    let arrayData2 = [
-        {"Question":5, "Column":2, "description":"This card has a single description. Pretty nifty, huh?"},
-        {"Question":6, "Column":0, "description":"This card has a single description. Pretty nifty, huh?"}]
-    const treatedInput2 = JSON.stringify(arrayData2);
-    storage.setItem("2", treatedInput2);
-
-    let arrayData3 = [
-        {"Question":7, "Column":3, "description":"This card has a single description. Pretty nifty, huh?"},
-        {"Question":8, "Column":0, "description":"This card has a single description. Pretty nifty, huh?"}]
-    const treatedInput3 = JSON.stringify(arrayData3);
-    storage.setItem("3", treatedInput3);
 
     console.log("Completed Writing Local Storage...");
 }
@@ -128,5 +171,3 @@ writeStorage(storage);
 getStorage(storage);
 
 
-let cardData = [{"Question":1, "Column":0, "description":"This card has a single description. Pretty nifty, huh?"}, {"Question":2, "Column":0, "description":"This card has a single description. Pretty nifty, huh?"}]
-console.log(cardData[1].Question);
